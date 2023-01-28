@@ -1,0 +1,10 @@
+[info] Exerc2:
+[info] created_at value
+[info] - should be the oldest *** FAILED ***
+[info]   Exerc2.this.dataframesAreEquals(actual, expected) was false (Exerc2.scala:24)
+[info] schema
+[info] - should contains hs_id column *** FAILED ***
+[info]   Exerc2.this.dataframesAreEquals(actual, expected) was false (Exerc2.scala:48)
+[info] metrics
+[info] - should be equals *** FAILED ***
+[info]   Exerc2.this.dataframesAreEquals(actual, expected) was false (Exerc2.scala:69)

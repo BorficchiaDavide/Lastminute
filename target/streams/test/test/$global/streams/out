@@ -1,0 +1,9 @@
+[debug] Running TaskDef(exercise2.Exerc2, org.scalatest.tools.Framework$$anon$1@7b3a12ad, false, [SuiteSelector])
+[info] Run completed in 1 minute, 3 seconds.
+[info] Total number of tests run: 3
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 0, failed 3, canceled 0, ignored 0, pending 0
+[info] *** 3 TESTS FAILED ***
+[error] Failed tests:
+[error] 	exercise2.Exerc2
+[error] (Test / test) sbt.TestsFailedException: Tests unsuccessful
