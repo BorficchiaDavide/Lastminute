@@ -3,13 +3,11 @@ package exercise2
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
-
 object Main extends Exercise2 {
   val conf = new SparkConf().setAppName("My App").setMaster("local")
   val spark = SparkSession.builder().config(conf).getOrCreate()
 
-  def main(args:Array[String]) {
-
+  def main(args: Array[String]) {
 
     val valuesDatasetPath = "src/main/resources/exercise2/values.csv"
     val matchingDatasetPath = "src/main/resources/exercise2/matching.csv"
@@ -23,7 +21,6 @@ object Main extends Exercise2 {
 
 //    PT 1
     val dfOrdered = getOldestCreatedAt(valuesDF)
-
     println("DF_ORDERED")
     dfOrdered.show(false)
 //    dfOrdered.count() // 278135
@@ -47,7 +44,6 @@ object Main extends Exercise2 {
 //    PT 5
     val clickoutDistributionDf = getClickDistribution(clickoutDf).orderBy("otaCode")
     clickoutDistributionDf.show(false)
-
 
   }
 

@@ -4,11 +4,10 @@ import scala.util.Try
 import exercise1.Preprocess._
 
 object InputKeyboard {
-
   def startInput(): String = {
     var condition = false
     var input = ""
-    while (condition != true) {
+    while (!condition) {
       println("Press 1 to search an hotel by name")
       println("Press 2 to search an hotel 3km near to a given coordinate")
       println("Insert \"exit\" to close the program")
@@ -26,11 +25,11 @@ object InputKeyboard {
   def getHotelName(): String = {
     var condition = false
     var input = ""
-    while (condition != true) {
+    while (!condition) {
       println("Insert hotel name")
       println("Insert \"back\" to change search method")
       input = normalizeValue(scala.io.StdIn.readLine())
-      if (!input.isEmpty || input == "back") {
+      if (input.nonEmpty || input == "back") {
         condition = true
         return input
       } else {
@@ -46,17 +45,17 @@ object InputKeyboard {
     var lat = ""
     var long = ""
 
-    while (condition != true) {
+    while (!condition) {
       println("Insert latitude")
       lat = normalizeValue(scala.io.StdIn.readLine())
-      if (!lat.isEmpty && Try(lat.toDouble).isSuccess) {
+      if (lat.nonEmpty && Try(lat.toDouble).isSuccess) {
         condition = true
-        while (conditionLong != true) {
+        while (!conditionLong) {
           println("Insert longitude")
           long = normalizeValue(scala.io.StdIn.readLine())
-          if (!long.isEmpty && Try(long.toDouble).isSuccess) {
+          if (long.nonEmpty && Try(long.toDouble).isSuccess) {
             conditionLong = true
-          }else {
+          } else {
             println("Wrong input!")
           }
         }

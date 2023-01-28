@@ -4,7 +4,7 @@
 		module="exercise-1-lastminute$sources"
 		revision="0.1"
 		status="integration"
-		publication="20230128163155"
+		publication="20230128171959"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

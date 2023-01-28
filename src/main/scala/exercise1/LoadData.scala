@@ -8,7 +8,6 @@ object LoadData {
     override val quoteChar: Char = '"'
     override val escapeChar: Char = '\\'
   }
-
   def loadCsv(filePath: String): List[Map[String, String]] = {
     val reader = CSVReader.open(filePath)(format)
     reader.allWithHeaders()

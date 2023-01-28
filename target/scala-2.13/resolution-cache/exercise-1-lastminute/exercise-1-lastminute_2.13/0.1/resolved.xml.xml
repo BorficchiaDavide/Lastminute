@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="exercise-1-lastminute"
+		module="exercise-1-lastminute_2.13"
+		revision="0.1"
+		status="integration"
+		publication="20230128173300"
+	>
+		<description>
+		exercise 1 lastminute
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="exercise-1-lastminute_2.13" type="pom" ext="pom" conf="pom"/>
+		<artifact name="exercise-1-lastminute_2.13" type="jar" ext="jar" conf="compile"/>
+		<artifact name="exercise-1-lastminute_2.13" type="src" ext="jar" conf="compile" e:classifier="sources"/>
+		<artifact name="exercise-1-lastminute_2.13" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.13.10" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.13.10" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scalikejdbc" name="scalikejdbc_2.13" rev="3.3.5" conf="compile->default(compile)"/>
+		<dependency org="org.scalikejdbc" name="scalikejdbc-interpolation_2.13" rev="3.3.5" conf="compile->default(compile)"/>
+		<dependency org="org.scalikejdbc" name="scalikejdbc-config_2.13" rev="3.3.5" conf="compile->default(compile)"/>
+		<dependency org="org.xerial" name="sqlite-jdbc" rev="3.40.0.0" conf="compile->default(compile)"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.2.+" conf="compile->default(compile)"/>
+		<dependency org="com.h2database" name="h2" rev="1.4.+" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="5.1.46" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-sql_2.13" rev="3.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.13" rev="3.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalactic" name="scalactic_2.13" rev="3.2.3" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.13" rev="3.2.3" conf="test->default(compile)"/>
+		<dependency org="com.github.tototoshi" name="scala-csv_2.13" rev="1.3.10" conf="compile->default(compile)"/>
+	</dependencies>
+</ivy-module>
