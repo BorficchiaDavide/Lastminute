@@ -18,7 +18,9 @@ object Main {
 
     val mappedOtas = mapDiscardMotivation(otasStringCleaned)
 
-    val otas = getCorrectElements(mappedOtas)
+    //if we want to separate the data discarded data between the good data we can use this method and then save them
+    // in two different talbes
+//    val otas = getCorrectElements(mappedOtas)
 
     // if we want do some operation on the discardedOtas we can get them with the getDiscardedElements method
 //      val discardedOtas = getDiscardedElements(mappedOtas)

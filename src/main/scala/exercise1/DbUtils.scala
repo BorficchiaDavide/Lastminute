@@ -51,7 +51,7 @@ object DbUtils {
 
   def getElementsByName(nameToSearch: String): List[OTA] = {
     val newNameToSearch = "%" + nameToSearch + "%"
-    sql"select * from otas where name LIKE $newNameToSearch"
+    sql"select * from otas where name LIKE $newNameToSearch and discardMotivation = ''"
       .map(rs =>
         OTA(
           rs.int("id"),
@@ -73,7 +73,7 @@ object DbUtils {
 
 //  here the search method is on the coordinate so we can discard all the rows with corrupted coordinates (0.0)
   def getElementsWithGoodCoordinates(): List[OTA] = {
-    sql"select * from otas where latitude != 0.0 and longitude != 0.0 "
+    sql"select * from otas where latitude != 0.0 and longitude != 0.0 and discardMotivation = ''"
       .map(rs =>
         OTA(
           rs.int("id"),
